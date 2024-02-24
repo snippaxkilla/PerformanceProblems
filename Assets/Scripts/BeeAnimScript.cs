@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BeeAnimScript : MonoBehaviour {
 
@@ -32,7 +30,5 @@ public class BeeAnimScript : MonoBehaviour {
             Vector3 targetDirection = Vector3.ClampMagnitude(transform.position - BB.bees.queen.transform.position, 1);
             GetComponent<Rigidbody>().AddForce(targetDirection * 3f, ForceMode.Acceleration);
         }
-    }
-
-            
+    }      
 }

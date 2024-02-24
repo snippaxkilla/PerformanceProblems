@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BeeGenScript : MonoBehaviour {
 
@@ -14,7 +12,6 @@ public class BeeGenScript : MonoBehaviour {
     public GameObject queen;
     float ph = 0;
 
-    // Start is called before the first frame update
     void Start() {
         //declare at BlackBoard
         BB.bees = this;
@@ -28,19 +25,11 @@ public class BeeGenScript : MonoBehaviour {
             ty = Random.Range(0.1f, 10f);
             bee[i] = Instantiate(beePrefab, new Vector3(tx, 2, ty), Quaternion.identity);
         }     
-
-        
-
     }
 
     void FixedUpdate() {
         //move Queen Bee
         ph += .005f;
         queen.transform.position = new Vector3(5f+ Mathf.Sin(ph * 3), 1.2f+Mathf.Sin(ph * 4), 5f+Mathf.Sin(ph * 5)) ;
-
-
     }
-
-
-
 }
